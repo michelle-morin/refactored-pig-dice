@@ -54,13 +54,13 @@ describe ('Player', () => {
     expect(player1.win).toEqual(true);
   });
 
-  // test('should return random number when user rolls dice', () => {
-  //   player1.rollDice(game);
-  //   expect(player1.turnScore).toBeGreaterThan(0);
-  // });
+  test('should return random number when user rolls dice', () => {
+    player1.rollDice(game);
+    expect(player1.turnScore).toBeGreaterThan(0);
+  });
 
-  // test('should change turnscore to 0 when user rolls 1', () => {
-  //   player1.rollDice(game);
-  //   expect(player1.turnScore).toEqual(0);
-  // });
+  test('should change turnscore to 0 when user rolls 1', () => {
+    player1.rollDice(game);
+    expect(player1.turnScore).toEqual(0);
+  });
 });
