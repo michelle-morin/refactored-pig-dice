@@ -22,7 +22,7 @@ Game.prototype.findPlayer = function(id) {
     }
   };
   return false;
-}
+};
 
 Game.prototype.switchPlayers = function() {
   if (this.currentPlayer === 1) {
@@ -30,4 +30,4 @@ Game.prototype.switchPlayers = function() {
   } else if (this.currentPlayer === 2) {
     this.currentPlayer = 1;
   }
-}
+};
