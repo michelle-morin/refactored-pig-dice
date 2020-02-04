@@ -9,3 +9,13 @@ describe('Game', () => {
     expect(game.currentPlayer).toEqual(1);
   });
 });
+
+describe ('Player', () => {
+
+  test('should correctly make two player objects', () => {
+    var player1 = new Player("Michelle");
+    var player2 = new Player("Brandan");
+    expect(player1.name).toEqual("Michelle");
+    expect(player2.name).toEqual("Brandan");
+  })
+})
