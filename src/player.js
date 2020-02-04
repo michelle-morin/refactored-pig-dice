@@ -10,7 +10,7 @@ Player.prototype.rollDice = function(game) {
   if (diceRoll == 1) {
     this.turnScore = 0;
     this.endTurn(game);
-  } else {
+  } else if (diceRoll != 1) {
     this.turnScore += diceRoll;
   }
 };
