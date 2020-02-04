@@ -21,8 +21,8 @@ _This webpage allows two players to play pig dice. Each turn, a player repeatedl
 | Webpage adds two players objects to game object array | users enter names | game.players = [player1, player2] |
 | Webpage generates random number between 1 and 6 when user clicks "roll" button | click | 4 |
 | Webpage changes turn score to 0 if user rolls 1 | 1 | turn score: 0 |
-| Webpage switches to other user's turn if user rolls 1 | 1 | turn score: 0, other user's roll |
 | Webpage allows user to roll multiple times, and sums the scores from each roll as a turn score | 4, 5 | 9 |
+| Webpage switches to other user's turn if user rolls 1 | 1 | turn score: 0, other user's roll |
 | Webpage adds turn score to total score when user clicks "hold" button | hold | turn score: 0, score: prior score + turn score |
 | Webpage alerts user when user reaches score of 100 | total score: 100 | *confetti* |
 
