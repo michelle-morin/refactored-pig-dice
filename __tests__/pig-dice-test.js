@@ -1,8 +1,9 @@
 import { Game } from '../src/game.js';
 import { Player } from '../src/player.js';
+import { endTurn } from '../src/player.js';
 
 describe('Game', () => {
-
+  var game;
   beforeEach(() => {
     game = new Game();
   });
@@ -23,7 +24,9 @@ describe('Game', () => {
 });
 
 describe ('Player', () => {
-
+  var game;
+  var player1;
+  var player2;
   beforeEach(() => {
     game = new Game();
     player1 = new Player("Michelle");
@@ -36,6 +39,8 @@ describe ('Player', () => {
   });
 
   test('should switch to other player turn when player rolls 1', () => {
+    game.switchPlayers();
+    expect(game.currentPlayer).toEqual(2);
   });
 
   // test('should return random number when user rolls dice', () => {
