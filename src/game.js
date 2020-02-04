@@ -6,6 +6,7 @@ export function Game() {
 
 Game.prototype.assignId = function() {
   this.currentId += 1;
+  return this.currentId;
 };
 
 Game.prototype.addPlayer = function(player) {
