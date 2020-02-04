@@ -3,17 +3,17 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
-function showPlayerScore(playerId, turnScore, playerScore) {
+export function showPlayerScore(playerId, turnScore, playerScore) {
   $(".player" + playerId + "TurnScore").html(turnScore);
   $(".player" + playerId + "Total").html(playerScore);
 };
 
-function showDiceRoll(playerId, roll) {
+export function showDiceRoll(playerId, roll, game) {
   var player = game.findPlayer(playerId);
   $(".player" + player.id + "Roll").html(roll);
 };
 
-function removeTurnScore(id) {
+export function removeTurnScore(id) {
   $(".player" + id + "TurnScore").html("0");
 };
 
