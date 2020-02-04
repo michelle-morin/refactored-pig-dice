@@ -61,7 +61,7 @@ describe ('Player', () => {
   });
 
   test('should change turnscore to 0 when user rolls 1', () => {
-    player1.rollDice(game);
+    player1.rollDice(game, 1);
     expect(player1.turnScore).toEqual(0);
   });
 });
