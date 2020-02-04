@@ -1,4 +1,5 @@
 import { Game } from './../src/pig-dice.js';
+import { Player } from './../src/pig-dice.js';
 
 describe('Game', () => {
 
