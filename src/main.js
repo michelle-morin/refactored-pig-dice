@@ -1,3 +1,5 @@
+import { Game } from '../src/game.js';
+import { Player } from '../src/player.js';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -6,20 +8,21 @@ import './styles.css';
 export function showPlayerScore(playerId, turnScore, playerScore) {
   $(".player" + playerId + "TurnScore").html(turnScore);
   $(".player" + playerId + "Total").html(playerScore);
-};
+}
 
 export function showDiceRoll(playerId, roll, game) {
   var player = game.findPlayer(playerId);
   $(".player" + player.id + "Roll").html(roll);
-};
+}
 
 export function removeTurnScore(id) {
   $(".player" + id + "TurnScore").html("0");
-};
+}
 
 $(document).ready(function() {
   $("button#start-play").click(function(event) {
     event.preventDefault();
+    var game = new Game();
     var player1Name = $("input#player1Name").val();
     var player2Name = $("input#player2Name").val();
 
@@ -40,6 +43,7 @@ $(document).ready(function() {
 
     $("button#hold").click(function(event) {
       event.preventDefault();
+      var playerRolling = game.findPlayer(game.currentPlayer);
       playerRolling.endTurn(game);
     });
   });

@@ -20,7 +20,7 @@ Game.prototype.findPlayer = function(id) {
         return this.players[i];
       }
     }
-  };
+  }
   return false;
 };
 

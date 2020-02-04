@@ -11,7 +11,7 @@ Player.prototype.rollDice = function(game, num = null) {
   if (!num) {
     var diceRoll = Math.floor( Math.random() * 6) +1;
   } else {
-    var diceRoll = num;
+    diceRoll = num;
   }
   if (diceRoll == 1) {
     this.turnScore = 0;
