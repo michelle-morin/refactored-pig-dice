@@ -43,18 +43,24 @@ describe ('Player', () => {
   });
 
   test('should add user turn score to total score at end of turn', () => {
-    player1.rollDice();
-    player1.endTurn();
+    player1.rollDice(game);
+    player1.endTurn(game);
     expect(player1.totalScore).toBeGreaterThan(0);
-  })
+  });
+
+  test('should update player winning property to true if player score is greater than or equal to 100', () => {
+    player1.totalScore = 100;
+    player1.endTurn(game);
+    expect(player1.win).toEqual(true);
+  });
 
   // test('should return random number when user rolls dice', () => {
-  //   player1.rollDice();
+  //   player1.rollDice(game);
   //   expect(player1.turnScore).toBeGreaterThan(0);
   // });
 
   // test('should change turnscore to 0 when user rolls 1', () => {
-  //   player1.rollDice();
+  //   player1.rollDice(game);
   //   expect(player1.turnScore).toEqual(0);
   // });
 });
