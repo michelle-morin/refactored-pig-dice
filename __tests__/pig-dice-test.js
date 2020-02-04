@@ -20,9 +20,15 @@ describe ('Player', () => {
     expect(player2.name).toEqual("Brandan");
   });
 
-  test('should return random number when user rolls dice', () => {
-    var player1 = new Player("Michelle");
+  // test('should return random number when user rolls dice', () => {
+  //   var player1 = new Player("Michelle");
+  //   player1.rollDice();
+  //   expect(player1.turnScore).toBeGreaterThan(0);
+  // })
+
+  test('should change turnscore to 0 when user rolls 1', () => {
+    var player1 = new Player("Brandan");
     player1.rollDice();
-    expect(player1.turnScore).toBeGreaterThan(0);
-  })
+    expect(player1.turnScore).toEqual(0);
+  }) 
 });
