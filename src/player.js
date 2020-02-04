@@ -6,5 +6,9 @@ export function Player(name) {
 
 Player.prototype.rollDice = function() {
   var diceRoll = Math.floor( Math.random() * 6) +1;
-  this.turnScore += diceRoll;
-}
+  if (diceRoll == 1) {
+    this.turnScore = 0;
+  } else {
+    this.turnScore += diceRoll;
+  }
+};
