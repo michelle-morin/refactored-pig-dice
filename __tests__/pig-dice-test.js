@@ -1,6 +1,5 @@
 import { Game } from '../src/game.js';
 import { Player } from '../src/player.js';
-import { endTurn } from '../src/player.js';
 
 describe('Game', () => {
   var game;
@@ -21,6 +20,11 @@ describe('Game', () => {
     game.addPlayer(player2);
     expect([player1, player2]).toEqual(expect.arrayContaining(game.players));
   });
+
+  test('should switch to other player turn when player rolls 1', () => {
+    game.switchPlayers();
+    expect(game.currentPlayer).toEqual(2);
+  });
 });
 
 describe ('Player', () => {
@@ -38,10 +42,11 @@ describe ('Player', () => {
     expect(player2.name).toEqual("Brandan");
   });
 
-  test('should switch to other player turn when player rolls 1', () => {
-    game.switchPlayers();
-    expect(game.currentPlayer).toEqual(2);
-  });
+  test('should add user turn score to total score at end of turn', () => {
+    player1.rollDice();
+    player1.endTurn();
+    expect(player1.totalScore).toBeGreaterThan(0);
+  })
 
   // test('should return random number when user rolls dice', () => {
   //   player1.rollDice();
