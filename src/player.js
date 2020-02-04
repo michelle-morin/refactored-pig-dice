@@ -5,8 +5,12 @@ export function Player(name) {
   this.win = false;
 }
 
-Player.prototype.rollDice = function(game) {
-  var diceRoll = Math.floor( Math.random() * 6) +1;
+Player.prototype.rollDice = function(game, num = null) {
+  if (!num) {
+    var diceRoll = Math.floor( Math.random() * 6) +1;
+  } else {
+    var diceRoll = num;
+  }
   if (diceRoll == 1) {
     this.turnScore = 0;
     this.endTurn(game);
