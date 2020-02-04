@@ -1,5 +1,5 @@
-import { Game } from './../src/pig-dice.js';
-import { Player } from './../src/pig-dice.js';
+import { Game } from '../src/game.js';
+import { Player } from '../src/player.js';
 
 describe('Game', () => {
 
@@ -18,5 +18,10 @@ describe ('Player', () => {
     var player2 = new Player("Brandan");
     expect(player1.name).toEqual("Michelle");
     expect(player2.name).toEqual("Brandan");
+  });
+
+  test('should return random number when user rolls dice', () => {
+    var player1 = new Player("Michelle");
+    expect(player1.turnScore).toEqual(!0);
   })
-})
+});
