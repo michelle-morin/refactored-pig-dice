@@ -1,3 +1,5 @@
+import { showPlayerScore, showDiceRoll, removeTurnScore } from './main.js';
+
 export function Player(name) {
   this.name = name;
   this.totalScore = 0;
@@ -13,11 +15,11 @@ Player.prototype.rollDice = function(game, num = null) {
   }
   if (diceRoll == 1) {
     this.turnScore = 0;
-    showDiceRoll(this.id, diceRoll);
+    showDiceRoll(this.id, diceRoll, game);
     this.endTurn(game);
   } else if (diceRoll != 1) {
     this.turnScore += diceRoll;
-    showDiceRoll(this.id, diceRoll);
+    showDiceRoll(this.id, diceRoll, game);
   }
   showPlayerScore(this.id, this.turnScore, this.totalScore);
 };
@@ -36,6 +38,6 @@ Player.prototype.endTurn = function(game) {
 
 Player.prototype.checkWin = function() {
   if (this.win === true) {
-    alert(this.name + " wins!")
+    alert(this.name + " wins!");
   }
-}
+};
