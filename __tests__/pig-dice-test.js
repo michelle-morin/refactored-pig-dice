@@ -22,6 +22,7 @@ describe ('Player', () => {
 
   test('should return random number when user rolls dice', () => {
     var player1 = new Player("Michelle");
-    expect(player1.turnScore).toEqual(!0);
+    player1.rollDice();
+    expect(player1.turnScore).toBeGreaterThan(0);
   })
 });
