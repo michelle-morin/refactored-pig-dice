@@ -3,6 +3,16 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
+function showPlayerScore(playerId, turnScore, playerScore) {
+  $(".player" + playerId + "TurnScore").html(turnScore);
+  $(".player" + playerId + "Total").html(playerScore);
+}
+
+function showDiceRoll(playerId, roll) {
+  var player = game.findPlayer(playerId);
+  $(".player" + player.id + "Roll").html(roll);
+}
+
 $(document).ready(function() {
   $("button#start-play").click(function(event) {
     event.preventDefault();
