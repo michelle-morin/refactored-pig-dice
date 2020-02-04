@@ -22,7 +22,8 @@ describe('Game', () => {
   });
 
   test('should switch to other player turn when player rolls 1', () => {
-    game.switchPlayers();
+    var player1 = new Player();
+    player1.rollDice(game, 1);
     expect(game.currentPlayer).toEqual(2);
   });
 });
