@@ -1,4 +1,4 @@
-import { showPlayerScore, showDiceRoll, removeTurnScore } from './main.js';
+import { showPlayerScore, showDiceRoll, removeTurnScore } from './helper.js';
 
 export function Player(name) {
   this.name = name;
